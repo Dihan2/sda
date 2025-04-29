@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Приклад семантичного макету</title>
+  <style>
+    :root{font-family:"Inter",system-ui,sans-serif;line-height:1.55;}
+    body{margin:0;display:grid;grid-template-columns:260px 1fr;grid-template-areas:"header header""nav main""aside main""footer footer";min-height:100vh;background:#f9fafb;color:#374151;}
+    header{grid-area:header;background:#2563eb;color:#fff;padding:1rem 2rem;display:flex;align-items:center;}
+    header h1{margin:0;font-size:1.5rem;}
+    nav{grid-area:nav;background:#eef2ff;padding:1rem 1.5rem;}
+    nav ul{list-style:none;padding:0;margin:0;display:flex;gap:1rem;flex-wrap:wrap;}
+    nav a{color:#2563eb;font-weight:600;text-decoration:none;}
+    nav a:hover{text-decoration:underline;}
+    aside{grid-area:aside;background:#f1f5f9;padding:1.2rem;overflow-y:auto;}
+    aside h2{font-size:1rem;margin-top:0;color:#111827;}
+    aside ul{list-style:none;padding-left:0;}
+    aside a{display:block;padding:.3rem 0;color:#374151;text-decoration:none;font-size:.9rem;}
+    aside a:hover{color:#2563eb;text-decoration:underline;}
+    main{grid-area:main;padding:2rem;max-width:900px;margin:0 auto;}
+    section{margin-bottom:2rem;}
+    section h2{margin-top:0;color:#111827;font-size:1.4rem;}
+    footer{grid-area:footer;background:#1e40af;color:#f1f5f9;text-align:center;padding:.8rem;font-size:.9rem;}
+    @media(max-width:768px){body{grid-template-columns:1fr;grid-template-areas:"header""nav""main""aside""footer";}aside{max-height:200px;}}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Семантична структура HTML5</h1>
+  </header>
+
+  <nav aria-label="Головна навігація">
+    <ul>
+      <li><a href="#вступ">Вступ</a></li>
+      <li><a href="#чому-семантика">Чому семантика?</a></li>
+      <li><a href="#структурні-теги">Структурні теги</a></li>
+      <li><a href="#практичний-приклад">Практичний приклад</a></li>
+      
+  
+    </ul>
+  </nav>
+
+  <aside aria-label="Зміст статті">
+    <h2>Зміст</h2>
+    <ul>
+      <li><a href="#вступ">Вступ</a></li>
+      <li><a href="#чому-семантика">Чому семантика?</a></li>
+      <li><a href="#структурні-теги">Структурні теги</a></li>
+      <li><a href="#практичний-приклад">Практичний приклад</a></li>
+    
+    </ul>
+  </aside>
+
+  <main>
+    <article>
+      <section id="вступ">
+        <h2>Вступ</h2>
+        <p>HTML5 подарував розробникам чіткі семантичні теги, завдяки яким код стає зрозумілим не лише браузеру, а й іншим розробникам, пошуковим системам та асистивним технологіям. У цій статті розглянемо, як будувати сайт, використовуючи <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code> та <code>&lt;footer&gt;</code>.</p>
+      </section>
+
+      <section id="чому-семантика">
+        <h2>Чому семантика?</h2>
+        <p>Семантичні теги описують зміст, а не вигляд. Це полегшує:</p>
+        <ul>
+          <li><strong>SEO</strong>: пошукові боти легше прочитають структуру сторінки.</li>
+          <li><strong>Доступність</strong>: экранні читачі передають кориснішу інформацію користувачам.</li>
+          <li><strong>Підтримку</strong>: зрозумілий код швидше оновлювати.</li>
+        </ul>
+      </section>
+
+      <section id="структурні-теги">
+        <h2>Огляд структурних тегів</h2>
+        <p>Кожен тег виконує свою роль:</p>
+        <ul>
+          <li><code>&lt;header&gt;</code> — верхня частина сторінки або блоку, часто містить логотип, назву та навігацію.</li>
+          <li><code>&lt;nav&gt;</code> — набір посилань для навігації.</li>
+          <li><code>&lt;aside&gt;</code> — боковий вміст, пов’язаний з основним (наприклад, колонка з посиланнями).</li>
+          <li><code>&lt;main&gt;</code> — головний унікальний контент сторінки.</li>
+          <li><code>&lt;section&gt;</code> — тематичний розділ у межах <code>&lt;main&gt;</code> чи <code>&lt;article&gt;</code>.</li>
+          <li><code>&lt;article&gt;</code> — самостійний фрагмент, який можна поширювати окремо.</li>
+          <li><code>&lt;footer&gt;</code> — нижня частина сторінки або блоку з додатковою інформацією.</li>
+        </ul>
+      </section>
+
+      <section id="практичний-приклад">
+        <h2>Практичний приклад</h2>
+        <p>У цьому макеті ми поєднали всі згадані теги, створивши просту, але чітку структуру. Спробуйте переглянути код і переконатися, що жоден див не був поранений під час розробки.</p>
+        <p>Для навігації скористайтеся посиланнями зверху або у боковій колонці — вони ведуть до відповідних розділів. Додайте власний контент, стилі або інтерактивність, не порушуючи семантики.</p>
+      </section>
+
+      <section id="висновки">
+        <h2>Висновки</h2>
+        <p>Семантичні теги роблять HTML осмисленим. Викор </p>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    &copy; 2025 Семантичний приклад. Усі права не захищені.
+  </footer>
+</body>
+</html>
